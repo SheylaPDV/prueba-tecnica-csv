@@ -27,9 +27,9 @@ fs.createReadStream("datos_prueba_tecnica.csv")
   .on("end", () => {
     results.forEach((res, index) => {
       // genre checking
-      if (res.genre == "H") {
+      if (res.sexo == "H") {
         men++;
-      } else if (res.genre == "M") {
+      } else if (res.sexo == "M") {
         women++;
       }
 
@@ -53,11 +53,11 @@ fs.createReadStream("datos_prueba_tecnica.csv")
     });
 
     console.log(
-      `En total hay ${
+      `\nEn total hay ${
         men + women
-      } empleados: ${men} hombres y ${women} mujeres `
+      } empleados:\n\t${men} hombres\n\t${women} mujeres\n`
     );
     console.log(
-      `El salario bruto anual de los empleados en la empresa es de ${totalSalaries}`
+      `El salario bruto anual de los empleados en la empresa es de ${totalSalaries} euros`
     );
   });
